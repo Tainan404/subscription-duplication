@@ -1,7 +1,7 @@
 # subscription-duplication
 issue on apollo where subscription are being duplicated
 
-# Hot to run 
+# How to run 
 
 ```bash
 - git clone https://github.com/Tainan404/subscription-duplication.git
