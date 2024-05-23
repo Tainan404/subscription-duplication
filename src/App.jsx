@@ -20,14 +20,22 @@ const client = new ApolloClient({
 
 function App() {
   const [duplicateChat, setDuplicateChat] = useState(false)
+  const [count, setCount] = useState(2)
 
   return (
     <>
       <ApolloProvider client={client}>
-        <input type="checkbox" onChange={(ev) => setDuplicateChat(ev.target.checked)} />
+        <label>
+          number of ChatList: 
+          <input type="number" value={count} onChange={(ev) => setCount(Number.parseInt(ev.target.value))} />  
+        </label>
         <div>
-          <ChatList />
-          {duplicateChat && <ChatList />}
+          {
+            Array.from({ length: count }).map((_, idx) => {
+              return <ChatList key={idx} />
+            })
+          }
+          
         </div>
         <ChatInput />
       </ApolloProvider>

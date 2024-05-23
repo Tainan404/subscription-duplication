@@ -24,20 +24,7 @@ function ChatList() {
   console.log(data);
   return (
     <div>
-      <table>
-      {
-        Object.keys(data.receiveMessage).map((key) => {
-          const message = data.receiveMessage[key];
-          console.log("🚀 -> Object.keys -> message:", message)
-          return (
-            <td key={Math.random()}>
-              <tr>{key}</tr>
-              <tr>{message}</tr>
-            </td>
-          );
-        })
-      }
-      </table>
+      <textarea value={JSON.stringify(data.receiveMessage)} readOnly />
     </div>
   )
 }
