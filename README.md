@@ -10,5 +10,5 @@ issue on apollo where subscription are being duplicated
 # run the server
 - npm run server
 # run the client
-- npm run client
+- npm run dev
 ```
